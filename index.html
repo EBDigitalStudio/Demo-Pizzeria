@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Napolitana – Pizzería Artesanal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <style>
+    :root {
+      --red: #C0392B;
+      --dark-red: #922B21;
+      --cream: #FDF6EC;
+      --warm-dark: #1A0A00;
+      --gold: #D4A017;
+      --text: #2C1810;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo-text { font-family: 'Playfair Display', serif; }
+
+    /* NAVBAR */
+    .navbar {
+      background: var(--warm-dark);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .logo-text { color: #fff; font-size: 1.7rem; font-weight: 900; letter-spacing: -0.5px; }
+    .logo-text span { color: var(--gold); }
+    .navbar-nav .nav-link { color: rgba(255,255,255,0.75) !important; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+    .navbar-nav .nav-link:hover { color: var(--gold) !important; }
+    .navbar-toggler { border-color: rgba(255,255,255,0.3); }
+    .navbar-toggler-icon { filter: invert(1); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--warm-dark) 0%, #3B1008 100%);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80') center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--warm-dark);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; color: #fff; line-height: 1; margin-bottom: 20px; }
+    .hero h1 em { color: var(--gold); font-style: italic; display: block; }
+    .hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 480px; margin-bottom: 32px; line-height: 1.7; }
+    .btn-primary-custom {
+      background: var(--red); color: #fff; border: none; padding: 14px 36px;
+      font-weight: 700; border-radius: 4px; font-size: 1rem; text-decoration: none;
+      display: inline-block; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary-custom:hover { background: var(--dark-red); color: #fff; transform: translateY(-2px); }
+    .hero-pizza-img {
+      width: 100%; max-width: 500px; border-radius: 50%;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+
+    /* SECTIONS */
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 900;
+      position: relative; display: inline-block; margin-bottom: 12px;
+    }
+    .section-title::after {
+      content: ''; position: absolute; bottom: -8px; left: 0;
+      width: 60%; height: 4px; background: var(--red); border-radius: 2px;
+    }
+    .section-sub { color: #7a5c48; font-size: 1rem; margin-top: 16px; }
+
+    /* PIZZA CARDS */
+    .menu-section { background: var(--cream); padding: 80px 0; }
+    .pizza-card {
+      background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s; height: 100%;
+    }
+    .pizza-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(0,0,0,0.15); }
+    .pizza-card img { width: 100%; height: 220px; object-fit: cover; }
+    .pizza-card-body { padding: 20px; }
+    .pizza-card-body h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+    .pizza-card-body p { color: #7a5c48; font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px; }
+    .pizza-price { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--red); }
+    .pizza-price small { font-family: 'Nunito', sans-serif; font-size: 0.75rem; color: #999; font-weight: 400; }
+    .btn-whatsapp {
+      background: #25D366; color: #fff; border: none; padding: 10px 20px;
+      border-radius: 6px; font-weight: 700; font-size: 0.88rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%; justify-content: center; margin-top: 12px;
+    }
+    .btn-whatsapp:hover { background: #128C7E; color: #fff; transform: scale(1.02); }
+
+    /* FILTER TABS */
+    .filter-tabs { margin-bottom: 40px; }
+    .filter-btn {
+      border: 2px solid var(--red); background: transparent; color: var(--red);
+      font-weight: 700; padding: 8px 22px; border-radius: 30px;
+      font-size: 0.88rem; cursor: pointer; transition: all 0.2s; margin: 4px;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--red); color: #fff; }
+
+    /* INFO STRIP */
+    .info-strip { background: var(--warm-dark); padding: 60px 0; color: #fff; }
+    .info-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 12px; }
+    .info-strip h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .info-strip p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7; }
+
+    /* MAP */
+    .map-section { padding: 80px 0; background: #f7efe3; }
+    .map-placeholder {
+      background: linear-gradient(135deg, #e8d5c0, #c9a87c); border-radius: 16px;
+      height: 380px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; position: relative;
+      overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    }
+    .map-placeholder::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg,rgba(255,255,255,0.03) 0px,rgba(255,255,255,0.03) 2px,transparent 2px,transparent 20px);
+    }
+    .map-pin { font-size: 4rem; animation: bounce 1.5s ease-in-out infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .map-label { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--warm-dark); margin-top: 10px; }
+    .map-address { color: #5a3e28; font-size: 0.9rem; margin-top: 6px; }
+
+    /* HOURS */
+    .hours-table { width: 100%; }
+    .hours-table tr { border-bottom: 1px solid #e8d5c0; }
+    .hours-table td { padding: 10px 0; font-size: 0.95rem; }
+    .hours-table td:last-child { text-align: right; font-weight: 600; color: var(--red); }
+    .hours-table .closed { color: #ccc !important; }
+    .today-row td { font-weight: 700 !important; color: var(--warm-dark) !important; }
+    .today-row td:last-child { color: #25D366 !important; }
+    .today-badge { background: #25D366; color: #fff; font-size: 0.65rem; padding: 2px 8px; border-radius: 20px; margin-left: 6px; vertical-align: middle; }
+
+    /* FOOTER */
+    footer { background: var(--warm-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 30px; font-size: 0.85rem; }
+    footer strong { color: var(--gold); }
+
+    /* GALLERY */
+    .gallery-section { padding: 80px 0; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; transition: transform 0.3s, filter 0.3s; filter: saturate(0.9); }
+    .gallery-grid img:hover { transform: scale(1.04); filter: saturate(1.2); }
+    .gallery-grid img:first-child { grid-column: span 2; aspect-ratio: 2/1; }
+
+    /* PIZZA FILTER */
+    .pizza-item { display: none; }
+    .pizza-item.show { display: block; }
+
+    @media(max-width: 576px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid img:first-child { grid-column: span 2; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <span style="font-size:1.8rem;">🍕</span>
+      <span class="logo-text">La <span>Napolitana</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
+        <li class="nav-item"><a class="nav-link" href="#horarios">Horarios</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="hero-content col-lg-6">
+        <div class="hero-badge">🔥 Horno de leña auténtico</div>
+        <h1>Pizza <em>Artesanal</em></h1>
+        <p>Masa madre 24 horas, ingredientes frescos y el amor de tres generaciones. Cada pizza es una obra maestra napolitana.</p>
+        <a href="#menu" class="btn-primary-custom">Ver el Menú</a>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=85" alt="Pizza artesanal" class="hero-pizza-img"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<section class="info-strip">
+  <div class="container">
+    <div class="row text-center gy-4">
+      <div class="col-6 col-md-3">
+        <div class="info-icon">🍕</div>
+        <h4>+20 Sabores</h4>
+        <p>Clásicas, gourmet y de temporada</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="info-icon">🔥</div>
+        <h4>Horno de Leña</h4>
+        <p>450°C para el resultado perfecto</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="info-icon">🚴</div>
+        <h4>Delivery Rápido</h4>
+        <p>En 30 minutos o es gratis</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="info-icon">💬</div>
+        <h4>Pide por WhatsApp</h4>
+        <p>Fácil, rápido y sin llamadas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="container">
+    <div class="mb-4">
+      <span class="section-title">Nuestro Menú</span>
+      <p class="section-sub">Elige tu favorita y pide directo por WhatsApp</p>
+    </div>
+    <div class="filter-tabs mt-4">
+      <button class="filter-btn active" onclick="filterPizzas('all', this)">Todas</button>
+      <button class="filter-btn" onclick="filterPizzas('clasica', this)">Clásicas</button>
+      <button class="filter-btn" onclick="filterPizzas('gourmet', this)">Gourmet</button>
+      <button class="filter-btn" onclick="filterPizzas('especial', this)">Especiales</button>
+    </div>
+    <div class="row g-4" id="pizzaGrid">
+
+      <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="clasica">
+        <div class="pizza-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" alt="Margarita"/>
+          <div class="pizza-card-body">
+            <h3>Margarita Clásica</h3>
+            <p>Salsa de tomate San Marzano, mozzarella fresca y albahaca del jardín.</p>
+            <div class="pizza-price">₲ 45.000 <small>/ personal</small></div>
+            <div class="pizza-price" style="font-size:1.2rem;">₲ 85.000 <small>/ familiar</small></div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Margarita%20Cl%C3%A1sica*%20%F0%9F%8D%95" class="btn-whatsapp" target="_blank">
+              <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="clasica">
+        <div class="pizza-card">
+          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80" alt="Pepperoni"/>
+          <div class="pizza-card-body">
+            <h3>Pepperoni Fuego</h3>
+            <p>Doble pepperoni importado, mozzarella y toque de guindilla ahumada.</p>
+            <div class="pizza-price">₲ 52.000 <small>/ personal</small></div>
+            <div class="pizza-price" style="font-size:1.2rem;">₲ 98.000 <small>/ familiar</small></div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Pepperoni%20Fuego*%20%F0%9F%8D%95%F0%9F%94%A5" class="btn-whatsapp" target="_blank">
+              <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="gourmet">
+        <div class="pizza-card">
+          <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=500&q=80" alt="Trufada"/>
+          <div class="pizza-card-body">
+            <h3>Trufada Negra</h3>
+            <p>Crema de trufa, champiñones portobello, prosciutto crudo y rúcula fresca.</p>
+            <div class="pizza-price">₲ 68.000 <small>/ personal</small></div>
+            <div class="pizza-price" style="font-size:1.2rem;">₲ 125.000 <small>/ familiar</small></div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Trufada%20Negra*%20%F0%9F%8D%95%E2%9C%A8" class="btn-whatsapp" target="_blank">
+              <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="gourmet">
+        <div class="pizza-card">
+          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=500&q=80" alt="Vegetariana"/>
+          <div class="pizza-card-body">
+            <h3>Vegetariana Gourmet</h3>
+            <p>Pesto de albahaca, berenjena asada, tomates cherry, queso de cabra y nueces.</p>
+            <div class="pizza-price">₲ 55.000 <small>/ personal</small></div>
+            <div class="pizza-price" style="font-size:1.2rem;">₲ 105.000 <small>/ familiar</small></div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Vegetariana%20Gourmet*%20%F0%9F%8D%95%F0%9F%8C%BF" class="btn-whatsapp" target="_blank">
+              <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="especial">
+        <div class="pizza-card">
+          <img src="https://images.unsplash.com/photo-1604917877934-07d8d248d396?w=500&q=80" alt="Napolitana"/>
+          <div class="pizza-card-body">
+            <h3>Napolitana Suprema</h3>
+            <p>Anchoas, aceitunas, alcaparras, tomate cherry y orégano fresco. La original.</p>
+            <div class="pizza-price">₲ 58.000 <small>/ personal</small></div>
+            <div class="pizza-price" style="font-size:1.2rem;">₲ 110.000 <small>/ familiar</small></div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Napolitana%20Suprema*%20%F0%9F%8D%95" class="btn-whatsapp" target="_blank">
+              <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="especial">
+        <div class="pizza-card">
+          <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=500&q=80" alt="Cuatro Quesos"/>
+          <div class="pizza-card-body">
+            <h3>Cuatro Quesos</h3>
+            <p>Mozzarella, gorgonzola, parmesano y brie con miel de trufa al finalizar.</p>
+            <div class="pizza-price">₲ 62.000 <small>/ personal</small></div>
+            <div class="pizza-price" style="font-size:1.2rem;">₲ 118.000 <small>/ familiar</small></div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Cuatro%20Quesos*%20%F0%9F%8D%95%F0%9F%A7%80" class="btn-whatsapp" target="_blank">
+              <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="galeria">
+  <div class="container">
+    <div class="mb-5">
+      <span class="section-title">Galería</span>
+      <p class="section-sub">Cada pizza, una experiencia visual</p>
+    </div>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1552539618-7eec9b4d1796?w=800&q=80" alt="Pizzería interior"/>
+      <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80" alt="Pizza al horno"/>
+      <img src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=400&q=80" alt="Masa pizza"/>
+      <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80" alt="Pizza fresca"/>
+      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Pizza topping"/>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN + HORARIOS -->
+<section class="map-section" id="ubicacion">
+  <div class="container">
+    <div class="row gy-5 align-items-start">
+      <div class="col-lg-7">
+        <div class="mb-4"><span class="section-title">Ubicación</span></div>
+        <div class="map-placeholder">
+          <div class="map-pin">📍</div>
+          <div class="map-label">La Napolitana</div>
+          <div class="map-address">Av. Italia 1234, Providencia, Santiago</div>
+          <a href="https://maps.google.com/?q=Providencia+Santiago" target="_blank"
+             style="margin-top:16px;background:var(--red);color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.9rem;">
+            <i class="bi bi-map"></i> Ver en Google Maps
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5" id="horarios">
+        <div class="mb-4"><span class="section-title">Horarios</span></div>
+        <div class="bg-white rounded-3 p-4 shadow-sm">
+          <table class="hours-table">
+            <tbody>
+              <tr><td>Lunes</td><td class="closed">Cerrado</td></tr>
+              <tr><td>Martes</td><td>12:00 – 22:00</td></tr>
+              <tr><td>Miércoles</td><td>12:00 – 22:00</td></tr>
+              <tr class="today-row"><td>Jueves <span class="today-badge">Hoy</span></td><td>12:00 – 23:00</td></tr>
+              <tr><td>Viernes</td><td>12:00 – 23:30</td></tr>
+              <tr><td>Sábado</td><td>11:00 – 00:00</td></tr>
+              <tr><td>Domingo</td><td>11:00 – 22:00</td></tr>
+            </tbody>
+          </table>
+          <div class="mt-4 p-3 rounded-2" style="background:#f0fdf4;border-left:4px solid #25D366;">
+            <small class="fw-bold" style="color:#15803d;">
+              ¡Estamos abiertos ahora! Pedidos hasta las 22:30
+            </small>
+          </div>
+          <a href="https://wa.me/595991211207?text=Hola!%20Quisiera%20hacer%20un%20pedido%20%F0%9F%8D%95" class="btn-whatsapp mt-3" target="_blank">
+            <i class="bi bi-whatsapp"></i> Hacer un pedido ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>🍕 <strong>La Napolitana</strong> – Pizzería Artesanal &nbsp;|&nbsp; Av. Italia 1234, Providencia &nbsp;|&nbsp; 0991 211 207</p>
+  <p class="mt-2" style="font-size:0.78rem;">© 2025 La Napolitana. Demo creado con ❤️ – los precios son ilustrativos.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function filterPizzas(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pizza-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.classList.add('show');
+      } else {
+        item.classList.remove('show');
+      }
+    });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
