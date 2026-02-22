@@ -4,16 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Napolitana – Pizzería Artesanal</title>
-
-  <!-- Bootstrap CSS (CDN) -->
+  <title>La Napolitana – Pizzería Artesanal | Asunción, Paraguay</title>
+  <meta name="description" content="La Napolitana, pizzería artesanal en Asunción. Masa madre 24h, horno de leña, ingredientes frescos. Delivery en 30 min. Pedí por WhatsApp." />
+  <meta name="keywords" content="pizzería asunción, pizza artesanal paraguay, delivery pizza, horno de leña, la napolitana" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="La Napolitana – Pizzería Artesanal" />
+  <meta property="og:description" content="Pizza artesanal napolitana en Asunción. Masa madre, horno de leña, delivery en 30 min." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&q=85" />
+  <meta property="og:url" content="https://lanapolitana.com.py" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>" />
+  <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Nunito:wght@300;400;600&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <!-- Estilos propios -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -21,79 +29,80 @@
 <body>
 
   <!-- ═══════════════════════════════════════════
-     NAVBAR
-═══════════════════════════════════════════ -->
-  <nav class="navbar navbar-expand-lg">
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg" id="mainNav" role="navigation" aria-label="Menú principal">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <span style="font-size:1.8rem;">🍕</span>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="La Napolitana – Inicio">
+        <span aria-hidden="true" style="font-size:1.8rem;">🍕</span>
         <span class="logo-text">La <span>Napolitana</span></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-        aria-label="Abrir menú">
+        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú de navegación">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto gap-lg-2">
+        <ul class="navbar-nav ms-auto gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
           <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
           <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
           <li class="nav-item"><a class="nav-link" href="#opiniones">Opiniones</a></li>
           <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
-          <li class="nav-item"><a class="nav-link" href="#horarios">Horarios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- ═══════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════ -->
-  <section class="hero">
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="inicio" aria-label="Bienvenida">
     <div class="container">
       <div class="row align-items-center gy-5">
-        <div class="hero-content col-lg-6">
-          <div class="hero-badge">🔥 Horno de leña auténtico</div>
+        <div class="hero-content col-lg-6 fade-in-up">
+          <div class="hero-badge" aria-label="Certificación">🔥 Horno de leña auténtico</div>
           <h1>Pizza <em>Artesanal</em></h1>
-          <p>Masa madre 24 horas, ingredientes frescos y el amor de tres generaciones. Cada pizza es una obra maestra
-            napolitana.</p>
+          <p>Masa madre 24 horas, ingredientes frescos importados y el amor de tres generaciones. Cada pizza es una obra maestra napolitana.</p>
           <div class="d-flex flex-wrap gap-3">
             <a href="#menu" class="btn-primary-custom">Ver el Menú</a>
-            <a href="menu.pdf" download class="btn-menu-pdf">
-              <i class="bi bi-file-earmark-pdf-fill"></i> Descargar Menú PDF
+            <a href="menu.pdf" download class="btn-menu-pdf" aria-label="Descargar menú en PDF">
+              <i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i> Descargar Menú PDF
             </a>
           </div>
         </div>
-        <div class="col-lg-6 text-center">
-          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=85" alt="Pizza artesanal"
-            class="hero-pizza-img" />
+        <div class="col-lg-6 text-center fade-in-up" style="animation-delay:0.2s;">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=85"
+            alt="Pizza artesanal napolitana recién horneada en horno de leña" class="hero-pizza-img" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
-     INFO STRIP
-═══════════════════════════════════════════ -->
-  <section class="info-strip">
+       INFO STRIP
+  ═══════════════════════════════════════════ -->
+  <section class="info-strip" aria-label="Características principales">
     <div class="container">
       <div class="row text-center gy-4">
         <div class="col-6 col-md-3">
-          <div class="info-icon">🍕</div>
+          <div class="info-icon" aria-hidden="true">🍕</div>
           <h4>+20 Sabores</h4>
           <p>Clásicas, gourmet y de temporada</p>
         </div>
         <div class="col-6 col-md-3">
-          <div class="info-icon">🔥</div>
+          <div class="info-icon" aria-hidden="true">🔥</div>
           <h4>Horno de Leña</h4>
           <p>450°C para el resultado perfecto</p>
         </div>
         <div class="col-6 col-md-3">
-          <div class="info-icon">🚴</div>
+          <div class="info-icon" aria-hidden="true">🚴</div>
           <h4>Delivery Rápido</h4>
           <p>En 30 minutos o es gratis</p>
         </div>
         <div class="col-6 col-md-3">
-          <div class="info-icon">💬</div>
+          <div class="info-icon" aria-hidden="true">💬</div>
           <h4>Pide por WhatsApp</h4>
           <p>Fácil, rápido y sin llamadas</p>
         </div>
@@ -102,346 +111,544 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-     MENÚ
-═══════════════════════════════════════════ -->
-  <section class="menu-section" id="menu">
+       SOBRE NOSOTROS
+  ═══════════════════════════════════════════ -->
+  <section class="about-section" id="nosotros" aria-labelledby="about-title">
     <div class="container">
-      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-2">
-        <div>
-          <span class="section-title">Nuestro Menú</span>
-          <p class="section-sub">Elige tu favorita y pide directo por WhatsApp</p>
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="about-img-grid">
+            <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=500&q=80"
+              alt="Chef preparando pizza en horno de leña" class="about-img-main scroll-fade" />
+            <img src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=300&q=80"
+              alt="Manos estirando masa de pizza artesanal" class="about-img-sm scroll-fade" />
+            <div class="about-badge scroll-fade">
+              <span class="about-badge-num">3</span>
+              <span class="about-badge-txt">Generaciones</span>
+            </div>
+          </div>
         </div>
-        <a href="menu.pdf" download class="btn-menu-pdf mb-1">
-          <i class="bi bi-file-earmark-pdf-fill"></i> Menú completo PDF
+        <div class="col-lg-6 scroll-fade">
+          <span class="section-label">Nuestra Historia</span>
+          <h2 class="section-title" id="about-title">Tradición napolitana<br>desde 1989</h2>
+          <p class="about-text">Todo comenzó cuando el <strong>nonno Giuseppe Ferraro</strong> llegó a Paraguay con una maleta llena de sueños y una receta familiar. En un pequeño local del barrio San Lorenzo, encendió su primer horno de leña y empezó a hacer las pizzas que aprendió de su madre en Nápoles.</p>
+          <p class="about-text">Hoy, tres décadas después, sus nietos continúan la tradición con el mismo fuego y la misma pasión. Usamos <strong>masa madre con 24 horas de fermentación</strong>, tomates San Marzano importados y mozzarella fresca de calidad DOP. Cada pizza sale de nuestro horno a 450°C en solo 90 segundos.</p>
+          <div class="about-values">
+            <div class="about-value">
+              <i class="bi bi-award-fill" aria-hidden="true"></i>
+              <span>Ingredientes certificados</span>
+            </div>
+            <div class="about-value">
+              <i class="bi bi-fire" aria-hidden="true"></i>
+              <span>Horno de leña desde 1989</span>
+            </div>
+            <div class="about-value">
+              <i class="bi bi-heart-fill" aria-hidden="true"></i>
+              <span>Receta familiar original</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROMOCIONES
+  ═══════════════════════════════════════════ -->
+  <section class="promos-section" id="promociones" aria-labelledby="promos-title">
+    <div class="container">
+      <div class="text-center mb-5 scroll-fade">
+        <span class="section-label">Ofertas Especiales</span>
+        <h2 class="section-title" id="promos-title">Promociones de la Semana</h2>
+        <p class="section-sub">Aprovechá nuestras promos y pedí por WhatsApp</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 scroll-fade">
+          <article class="promo-card promo-martes">
+            <div class="promo-tag">Martes</div>
+            <div class="promo-icon" aria-hidden="true">🍕🍕</div>
+            <h3>2×1 en Clásicas</h3>
+            <p>Todos los martes, comprá una pizza clásica y llevate otra igual gratis. Personal o familiar.</p>
+            <div class="promo-valid">Válido todos los martes · Solo delivery</div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20aprovechar%20la%20promo%202x1%20del%20martes%20%F0%9F%8D%95"
+              class="btn-whatsapp mt-3" target="_blank" rel="noopener" aria-label="Pedir promo 2x1 por WhatsApp">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir esta promo
+            </a>
+          </article>
+        </div>
+        <div class="col-md-4 scroll-fade" style="animation-delay:0.1s;">
+          <article class="promo-card promo-combo">
+            <div class="promo-tag promo-tag-gold">Siempre</div>
+            <div class="promo-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+            <h3>Combo Familiar</h3>
+            <p>2 pizzas familiares + 1.5L bebida + porción de tiramisú. Todo por un precio especial.</p>
+            <div class="promo-price">₲ 195.000</div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20el%20Combo%20Familiar%20%F0%9F%8D%95%F0%9F%A7%88"
+              class="btn-whatsapp mt-3" target="_blank" rel="noopener" aria-label="Pedir combo familiar por WhatsApp">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir combo
+            </a>
+          </article>
+        </div>
+        <div class="col-md-4 scroll-fade" style="animation-delay:0.2s;">
+          <article class="promo-card promo-viernes">
+            <div class="promo-tag promo-tag-dark">Viernes y Sábado</div>
+            <div class="promo-icon" aria-hidden="true">🎉</div>
+            <h3>Noche Gourmet</h3>
+            <p>Pedí cualquier pizza Gourmet los viernes y sábados y recibís una porción de tiramisu de regalo.</p>
+            <div class="promo-valid">Cenas a partir de las 20:00</div>
+            <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20info%20sobre%20la%20Noche%20Gourmet%20%F0%9F%8D%95%E2%9C%A8"
+              class="btn-whatsapp mt-3" target="_blank" rel="noopener" aria-label="Consultar noche gourmet por WhatsApp">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i> Consultar
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MENÚ
+  ═══════════════════════════════════════════ -->
+  <section class="menu-section" id="menu" aria-labelledby="menu-title">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-2 scroll-fade">
+        <div>
+          <span class="section-label">Nuestras Pizzas</span>
+          <h2 class="section-title" id="menu-title">Nuestro Menú</h2>
+          <p class="section-sub">Elige tu favorita y pedí directo por WhatsApp</p>
+        </div>
+        <a href="menu.pdf" download class="btn-menu-pdf mb-1" aria-label="Descargar menú completo en PDF">
+          <i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i> Menú completo PDF
         </a>
       </div>
 
       <!-- Filtros -->
-      <div class="filter-tabs mt-4">
-        <button class="filter-btn active" onclick="filterPizzas('all', this)">Todas</button>
-        <button class="filter-btn" onclick="filterPizzas('clasica', this)">Clásicas</button>
-        <button class="filter-btn" onclick="filterPizzas('gourmet', this)">Gourmet</button>
-        <button class="filter-btn" onclick="filterPizzas('especial', this)">Especiales</button>
+      <div class="filter-tabs mt-4 scroll-fade" role="group" aria-label="Filtrar pizzas por categoría">
+        <button class="filter-btn active" onclick="filterPizzas('all', this)" aria-pressed="true">Todas</button>
+        <button class="filter-btn" onclick="filterPizzas('clasica', this)" aria-pressed="false">Clásicas</button>
+        <button class="filter-btn" onclick="filterPizzas('gourmet', this)" aria-pressed="false">Gourmet</button>
+        <button class="filter-btn" onclick="filterPizzas('especial', this)" aria-pressed="false">Especiales</button>
       </div>
 
-      <div class="row g-4" id="pizzaGrid">
+      <div class="row g-4" id="pizzaGrid" role="list">
 
         <!-- Margarita -->
-        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="clasica">
-          <div class="pizza-card">
-            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80"
-              alt="Margarita Clásica" />
+        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="clasica" role="listitem">
+          <article class="pizza-card">
+            <div class="pizza-img-wrap">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80"
+                alt="Pizza Margarita Clásica con mozzarella fresca y albahaca" />
+              <div class="pizza-badges">
+                <span class="pizza-badge badge-bestseller">⭐ Más vendida</span>
+              </div>
+            </div>
             <div class="pizza-card-body">
               <h3>Margarita Clásica</h3>
-              <p>Salsa de tomate San Marzano, mozzarella fresca y albahaca del jardín.</p>
-              <div class="pizza-price">₲ 45.000 <small>/ personal</small></div>
-              <div class="pizza-price" style="font-size:1.2rem;">₲ 85.000 <small>/ familiar</small></div>
+              <p>Salsa de tomate San Marzano, mozzarella fresca DOP y albahaca del jardín.</p>
+              <div class="size-selector" role="group" aria-label="Seleccionar tamaño">
+                <button class="size-btn active" data-size="personal" data-price="45.000" aria-pressed="true">Personal – ₲ 45.000</button>
+                <button class="size-btn" data-size="familiar" data-price="85.000" aria-pressed="false">Familiar – ₲ 85.000</button>
+              </div>
+              <div class="pizza-price-display">₲ <span class="price-val">45.000</span></div>
               <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Margarita%20Cl%C3%A1sica*%20%F0%9F%8D%95"
-                class="btn-whatsapp" target="_blank" rel="noopener">
-                <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+                class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Pedir Margarita Clásica por WhatsApp">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir por WhatsApp
               </a>
             </div>
-          </div>
+          </article>
         </div>
 
         <!-- Pepperoni -->
-        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="clasica">
-          <div class="pizza-card">
-            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80" alt="Pepperoni Fuego" />
+        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="clasica" role="listitem">
+          <article class="pizza-card">
+            <div class="pizza-img-wrap">
+              <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80"
+                alt="Pizza Pepperoni Fuego con doble pepperoni y mozzarella" />
+              <div class="pizza-badges">
+                <span class="pizza-badge badge-spicy">🌶 Picante</span>
+              </div>
+            </div>
             <div class="pizza-card-body">
               <h3>Pepperoni Fuego</h3>
-              <p>Doble pepperoni importado, mozzarella y toque de guindilla ahumada.</p>
-              <div class="pizza-price">₲ 52.000 <small>/ personal</small></div>
-              <div class="pizza-price" style="font-size:1.2rem;">₲ 98.000 <small>/ familiar</small></div>
+              <p>Doble pepperoni importado, mozzarella extra y toque de guindilla ahumada.</p>
+              <div class="size-selector" role="group" aria-label="Seleccionar tamaño">
+                <button class="size-btn active" data-size="personal" data-price="52.000" aria-pressed="true">Personal – ₲ 52.000</button>
+                <button class="size-btn" data-size="familiar" data-price="98.000" aria-pressed="false">Familiar – ₲ 98.000</button>
+              </div>
+              <div class="pizza-price-display">₲ <span class="price-val">52.000</span></div>
               <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Pepperoni%20Fuego*%20%F0%9F%8D%95%F0%9F%94%A5"
-                class="btn-whatsapp" target="_blank" rel="noopener">
-                <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+                class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Pedir Pepperoni Fuego por WhatsApp">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir por WhatsApp
               </a>
             </div>
-          </div>
+          </article>
         </div>
 
         <!-- Trufada -->
-        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="gourmet">
-          <div class="pizza-card">
-            <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=500&q=80" alt="Trufada Negra" />
+        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="gourmet" role="listitem">
+          <article class="pizza-card">
+            <div class="pizza-img-wrap">
+              <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=500&q=80"
+                alt="Pizza Trufada Negra con crema de trufa y prosciutto crudo" />
+              <div class="pizza-badges">
+                <span class="pizza-badge badge-gourmet">✨ Gourmet</span>
+              </div>
+            </div>
             <div class="pizza-card-body">
               <h3>Trufada Negra</h3>
               <p>Crema de trufa, champiñones portobello, prosciutto crudo y rúcula fresca.</p>
-              <div class="pizza-price">₲ 68.000 <small>/ personal</small></div>
-              <div class="pizza-price" style="font-size:1.2rem;">₲ 125.000 <small>/ familiar</small></div>
+              <div class="size-selector" role="group" aria-label="Seleccionar tamaño">
+                <button class="size-btn active" data-size="personal" data-price="68.000" aria-pressed="true">Personal – ₲ 68.000</button>
+                <button class="size-btn" data-size="familiar" data-price="125.000" aria-pressed="false">Familiar – ₲ 125.000</button>
+              </div>
+              <div class="pizza-price-display">₲ <span class="price-val">68.000</span></div>
               <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Trufada%20Negra*%20%F0%9F%8D%95%E2%9C%A8"
-                class="btn-whatsapp" target="_blank" rel="noopener">
-                <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+                class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Pedir Trufada Negra por WhatsApp">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir por WhatsApp
               </a>
             </div>
-          </div>
+          </article>
         </div>
 
         <!-- Vegetariana -->
-        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="gourmet">
-          <div class="pizza-card">
-            <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=500&q=80"
-              alt="Vegetariana Gourmet" />
+        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="gourmet" role="listitem">
+          <article class="pizza-card">
+            <div class="pizza-img-wrap">
+              <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=500&q=80"
+                alt="Pizza Vegetariana Gourmet con pesto, berenjena y queso de cabra" />
+              <div class="pizza-badges">
+                <span class="pizza-badge badge-veg">🥦 Vegetariana</span>
+                <span class="pizza-badge badge-bestseller">⭐ Más vendida</span>
+              </div>
+            </div>
             <div class="pizza-card-body">
               <h3>Vegetariana Gourmet</h3>
               <p>Pesto de albahaca, berenjena asada, tomates cherry, queso de cabra y nueces.</p>
-              <div class="pizza-price">₲ 55.000 <small>/ personal</small></div>
-              <div class="pizza-price" style="font-size:1.2rem;">₲ 105.000 <small>/ familiar</small></div>
+              <div class="size-selector" role="group" aria-label="Seleccionar tamaño">
+                <button class="size-btn active" data-size="personal" data-price="55.000" aria-pressed="true">Personal – ₲ 55.000</button>
+                <button class="size-btn" data-size="familiar" data-price="105.000" aria-pressed="false">Familiar – ₲ 105.000</button>
+              </div>
+              <div class="pizza-price-display">₲ <span class="price-val">55.000</span></div>
               <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Vegetariana%20Gourmet*%20%F0%9F%8D%95%F0%9F%8C%BF"
-                class="btn-whatsapp" target="_blank" rel="noopener">
-                <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+                class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Pedir Vegetariana Gourmet por WhatsApp">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir por WhatsApp
               </a>
             </div>
-          </div>
+          </article>
         </div>
 
         <!-- Napolitana -->
-        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="especial">
-          <div class="pizza-card">
-            <img src="https://images.unsplash.com/photo-1604917877934-07d8d248d396?w=500&q=80"
-              alt="Napolitana Suprema" />
+        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="especial" role="listitem">
+          <article class="pizza-card">
+            <div class="pizza-img-wrap">
+              <img src="https://images.unsplash.com/photo-1604917877934-07d8d248d396?w=500&q=80"
+                alt="Pizza Napolitana Suprema original con anchoas y aceitunas" />
+              <div class="pizza-badges">
+                <span class="pizza-badge badge-special">🏆 La Original</span>
+              </div>
+            </div>
             <div class="pizza-card-body">
               <h3>Napolitana Suprema</h3>
               <p>Anchoas, aceitunas, alcaparras, tomate cherry y orégano fresco. La original.</p>
-              <div class="pizza-price">₲ 58.000 <small>/ personal</small></div>
-              <div class="pizza-price" style="font-size:1.2rem;">₲ 110.000 <small>/ familiar</small></div>
+              <div class="size-selector" role="group" aria-label="Seleccionar tamaño">
+                <button class="size-btn active" data-size="personal" data-price="58.000" aria-pressed="true">Personal – ₲ 58.000</button>
+                <button class="size-btn" data-size="familiar" data-price="110.000" aria-pressed="false">Familiar – ₲ 110.000</button>
+              </div>
+              <div class="pizza-price-display">₲ <span class="price-val">58.000</span></div>
               <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Napolitana%20Suprema*%20%F0%9F%8D%95"
-                class="btn-whatsapp" target="_blank" rel="noopener">
-                <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+                class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Pedir Napolitana Suprema por WhatsApp">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir por WhatsApp
               </a>
             </div>
-          </div>
+          </article>
         </div>
 
         <!-- Cuatro Quesos -->
-        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="especial">
-          <div class="pizza-card">
-            <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=500&q=80" alt="Cuatro Quesos" />
+        <div class="col-sm-6 col-lg-4 pizza-item show" data-cat="especial" role="listitem">
+          <article class="pizza-card">
+            <div class="pizza-img-wrap">
+              <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=500&q=80"
+                alt="Pizza Cuatro Quesos con mozzarella, gorgonzola, parmesano y brie" />
+              <div class="pizza-badges">
+                <span class="pizza-badge badge-gourmet">✨ Gourmet</span>
+              </div>
+            </div>
             <div class="pizza-card-body">
               <h3>Cuatro Quesos</h3>
               <p>Mozzarella, gorgonzola, parmesano y brie con miel de trufa al finalizar.</p>
-              <div class="pizza-price">₲ 62.000 <small>/ personal</small></div>
-              <div class="pizza-price" style="font-size:1.2rem;">₲ 118.000 <small>/ familiar</small></div>
+              <div class="size-selector" role="group" aria-label="Seleccionar tamaño">
+                <button class="size-btn active" data-size="personal" data-price="62.000" aria-pressed="true">Personal – ₲ 62.000</button>
+                <button class="size-btn" data-size="familiar" data-price="118.000" aria-pressed="false">Familiar – ₲ 118.000</button>
+              </div>
+              <div class="pizza-price-display">₲ <span class="price-val">62.000</span></div>
               <a href="https://wa.me/595991211207?text=Hola!%20Quiero%20pedir%20una%20*Pizza%20Cuatro%20Quesos*%20%F0%9F%8D%95%F0%9F%A7%80"
-                class="btn-whatsapp" target="_blank" rel="noopener">
-                <i class="bi bi-whatsapp"></i> Pedir por WhatsApp
+                class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Pedir Cuatro Quesos por WhatsApp">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i> Pedir por WhatsApp
               </a>
             </div>
-          </div>
+          </article>
         </div>
 
-      </div><!-- /row -->
+      </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
-     GALERÍA
-═══════════════════════════════════════════ -->
-  <section class="gallery-section" id="galeria">
+       GALERÍA
+  ═══════════════════════════════════════════ -->
+  <section class="gallery-section" id="galeria" aria-labelledby="galeria-title">
     <div class="container">
-      <div class="mb-5">
-        <span class="section-title">Galería</span>
+      <div class="mb-5 scroll-fade">
+        <span class="section-label">Momentos</span>
+        <h2 class="section-title" id="galeria-title">Galería</h2>
         <p class="section-sub">Cada pizza, una experiencia visual</p>
       </div>
       <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1552539618-7eec9b4d1796?w=800&q=80" alt="Interior de la pizzería" />
+        <img src="https://images.unsplash.com/photo-1552539618-7eec9b4d1796?w=800&q=80"
+          alt="Interior cálido de La Napolitana pizzería artesanal" class="scroll-fade" />
         <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80"
-          alt="Pizza al horno de leña" />
-        <img src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=400&q=80" alt="Preparando la masa" />
+          alt="Pizza cocinándose en horno de leña a 450 grados" class="scroll-fade" />
+        <img src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=400&q=80"
+          alt="Chef estirando masa madre artesanal" class="scroll-fade" />
         <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80"
-          alt="Pizza recién horneada" />
-        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Ingredientes frescos" />
+          alt="Pizza napolitana recién salida del horno" class="scroll-fade" />
+        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80"
+          alt="Ingredientes frescos para nuestras pizzas artesanales" class="scroll-fade" />
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
-     TESTIMONIOS / RESEÑAS  (nuevo)
-═══════════════════════════════════════════ -->
-  <section class="testimonials-section" id="opiniones">
+       TESTIMONIOS
+  ═══════════════════════════════════════════ -->
+  <section class="testimonials-section" id="opiniones" aria-labelledby="opiniones-title">
     <div class="container">
-      <div class="mb-5 text-center">
-        <span class="section-title">Lo que dicen nuestros clientes</span>
-        <p class="section-sub">Más de 1.200 reseñas en Google · Promedio ⭐ 4,9</p>
+      <div class="mb-5 text-center scroll-fade">
+        <span class="section-label section-label-light">Reseñas</span>
+        <h2 class="section-title" id="opiniones-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-sub">Más de 1.200 reseñas en Google · Promedio <span aria-label="4.9 estrellas">⭐ 4,9</span></p>
       </div>
       <div class="row g-4">
-
-        <div class="col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"La mejor pizza que he probado en mi vida. La masa es finísima y crujiente, los
-              ingredientes saben a Italia. Ya soy cliente de por vida."</p>
+        <div class="col-md-6 col-lg-4 scroll-fade">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+            <blockquote class="review-text">"La mejor pizza que probé en mi vida. La masa es finísima y crujiente, los ingredientes saben a Italia. Ya soy cliente de por vida."</blockquote>
             <div class="review-author">
-              <div class="review-avatar">ML</div>
+              <div class="review-avatar" aria-hidden="true">ML</div>
               <div>
                 <div class="review-name">María L.</div>
                 <div class="review-date">Febrero 2025</div>
-                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;"></i> Google</div>
+                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;" aria-hidden="true"></i> Google</div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Pedimos 3 pizzas por WhatsApp y llegaron en 28 minutos. La Trufada Negra es una
-              locura. ¡El horno de leña hace toda la diferencia!"</p>
+        <div class="col-md-6 col-lg-4 scroll-fade">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+            <blockquote class="review-text">"Pedimos 3 pizzas por WhatsApp y llegaron en 28 minutos. La Trufada Negra es una locura. ¡El horno de leña hace toda la diferencia!"</blockquote>
             <div class="review-author">
-              <div class="review-avatar">CA</div>
+              <div class="review-avatar" aria-hidden="true">CA</div>
               <div>
                 <div class="review-name">Carlos A.</div>
                 <div class="review-date">Enero 2025</div>
-                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;"></i> Google</div>
+                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;" aria-hidden="true"></i> Google</div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Vinimos a cenar en pareja y el ambiente es precioso. La Cuatro Quesos con miel de
-              trufa es simplemente perfecta. Volveremos siempre."</p>
+        <div class="col-md-6 col-lg-4 scroll-fade">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+            <blockquote class="review-text">"Vinimos a cenar en pareja y el ambiente es precioso. La Cuatro Quesos con miel de trufa es simplemente perfecta. Volveremos siempre."</blockquote>
             <div class="review-author">
-              <div class="review-avatar">SR</div>
+              <div class="review-avatar" aria-hidden="true">SR</div>
               <div>
                 <div class="review-name">Sofía R.</div>
                 <div class="review-date">Diciembre 2024</div>
-                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;"></i> Google</div>
+                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;" aria-hidden="true"></i> Google</div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"La masa madre se nota muchísimo. Pedí la Margarita sin esperar demasiado y me
-              sorprendió completamente. Ingredientes de calidad real."</p>
+        <div class="col-md-6 col-lg-4 scroll-fade">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+            <blockquote class="review-text">"La masa madre se nota muchísimo. Pedí la Margarita sin esperar demasiado y me sorprendió completamente. Ingredientes de calidad real."</blockquote>
             <div class="review-author">
-              <div class="review-avatar">JP</div>
+              <div class="review-avatar" aria-hidden="true">JP</div>
               <div>
                 <div class="review-name">Jorge P.</div>
                 <div class="review-date">Noviembre 2024</div>
-                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;"></i> Google</div>
+                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;" aria-hidden="true"></i> Google</div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"Pedir por WhatsApp es comodísimo. Me respondieron de inmediato, personalizaron la
-              pizza sin gluten sin problema. Servicio 10/10."</p>
+        <div class="col-md-6 col-lg-4 scroll-fade">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+            <blockquote class="review-text">"Pedir por WhatsApp es comodísimo. Respondieron enseguida, personalizaron la pizza sin gluten sin problema. Servicio 10/10."</blockquote>
             <div class="review-author">
-              <div class="review-avatar">AT</div>
+              <div class="review-avatar" aria-hidden="true">AT</div>
               <div>
                 <div class="review-name">Ana T.</div>
                 <div class="review-date">Octubre 2024</div>
-                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;"></i> Google</div>
+                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;" aria-hidden="true"></i> Google</div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">"La Napolitana Suprema con anchoas es exactamente lo que comí en Nápoles. No me lo
-              esperaba a este nivel aquí. ¡Felicitaciones al equipo!"</p>
+        <div class="col-md-6 col-lg-4 scroll-fade">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+            <blockquote class="review-text">"La Napolitana Suprema con anchoas es exactamente lo que comí en Nápoles. No me lo esperaba a este nivel aquí. ¡Felicitaciones al equipo!"</blockquote>
             <div class="review-author">
-              <div class="review-avatar">FM</div>
+              <div class="review-avatar" aria-hidden="true">FM</div>
               <div>
                 <div class="review-name">Federico M.</div>
                 <div class="review-date">Septiembre 2024</div>
-                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;"></i> Google</div>
+                <div class="google-badge"><i class="bi bi-google" style="color:#4285F4;" aria-hidden="true"></i> Google</div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
-
-      </div><!-- /row -->
-
-      <!-- CTA Reseñas -->
-      <div class="text-center mt-5">
-        <a href="https://g.page/r/lanapolitana/review" target="_blank" rel="noopener"
-          style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.25);padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:700;font-size:0.9rem;transition:background 0.2s;"
-          onmouseover="this.style.background='rgba(255,255,255,0.18)'"
-          onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-          <i class="bi bi-google" style="color:#4285F4;"></i> Déjanos tu reseña en Google
+      </div>
+      <div class="text-center mt-5 scroll-fade">
+        <a href="https://g.page/r/lanapolitana/review" target="_blank" rel="noopener" class="btn-review-google"
+          aria-label="Dejar una reseña en Google">
+          <i class="bi bi-google" aria-hidden="true"></i> Déjanos tu reseña en Google
         </a>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
-     UBICACIÓN + HORARIOS
-═══════════════════════════════════════════ -->
-  <section class="map-section" id="ubicacion">
+       ZONA DE DELIVERY
+  ═══════════════════════════════════════════ -->
+  <section class="delivery-section" aria-labelledby="delivery-title">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 scroll-fade">
+          <span class="section-label">Llevamos la pizza a tu puerta</span>
+          <h2 class="section-title" id="delivery-title">Zona de Delivery</h2>
+          <p class="delivery-text">Hacemos delivery en <strong>toda el área metropolitana de Asunción</strong>. Si tu barrio aparece en la lista, llegamos en 30 minutos o te devolvemos el dinero.</p>
+          <div class="delivery-zones">
+            <div class="zone-item"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Asunción (centro)</div>
+            <div class="zone-item"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> San Lorenzo</div>
+            <div class="zone-item"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Fernando de la Mora</div>
+            <div class="zone-item"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Lambaré</div>
+            <div class="zone-item"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Luque</div>
+            <div class="zone-item"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Mariano Roque Alonso</div>
+            <div class="zone-item zone-soon"><i class="bi bi-clock" aria-hidden="true"></i> Limpio (¡pronto!)</div>
+          </div>
+          <p class="delivery-note">¿No ves tu zona? Consultanos por WhatsApp, evaluamos cada caso.</p>
+          <a href="https://wa.me/595991211207?text=Hola!%20Quisiera%20saber%20si%20llegan%20a%20mi%20zona"
+            class="btn-whatsapp d-inline-flex" target="_blank" rel="noopener" style="width:auto;" aria-label="Consultar zona de delivery por WhatsApp">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Consultar mi zona
+          </a>
+        </div>
+        <div class="col-lg-6 scroll-fade" style="animation-delay:0.15s;">
+          <div class="delivery-stats">
+            <div class="delivery-stat">
+              <span class="stat-num">30</span>
+              <span class="stat-unit">min</span>
+              <span class="stat-label">Tiempo promedio</span>
+            </div>
+            <div class="delivery-stat">
+              <span class="stat-num">₲ 0</span>
+              <span class="stat-label">Delivery gratis en pedidos +₲ 80.000</span>
+            </div>
+            <div class="delivery-stat">
+              <span class="stat-num">7</span>
+              <span class="stat-label">Días a la semana</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MÉTODOS DE PAGO
+  ═══════════════════════════════════════════ -->
+  <section class="payment-section" aria-labelledby="payment-title">
+    <div class="container text-center">
+      <div class="scroll-fade">
+        <span class="section-label">Sin complicaciones</span>
+        <h2 class="section-title" id="payment-title">Métodos de Pago</h2>
+        <p class="section-sub">Aceptamos todas las formas de pago para tu comodidad</p>
+      </div>
+      <div class="payment-methods scroll-fade">
+        <div class="payment-item">
+          <div class="payment-icon" aria-hidden="true">💵</div>
+          <h4>Efectivo</h4>
+          <p>Guaraníes y dólares aceptados</p>
+        </div>
+        <div class="payment-item">
+          <div class="payment-icon" aria-hidden="true">💳</div>
+          <h4>Tarjeta</h4>
+          <p>Débito y crédito (Visa, Mastercard)</p>
+        </div>
+        <div class="payment-item">
+          <div class="payment-icon" aria-hidden="true">📱</div>
+          <h4>QR / Billetera</h4>
+          <p>Tigo Money, Personal Pay, Zimple</p>
+        </div>
+        <div class="payment-item">
+          <div class="payment-icon" aria-hidden="true">🏦</div>
+          <h4>Transferencia</h4>
+          <p>Bancard y transferencias bancarias</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       UBICACIÓN + HORARIOS
+  ═══════════════════════════════════════════ -->
+  <section class="map-section" id="ubicacion" aria-labelledby="ubicacion-title">
     <div class="container">
       <div class="row gy-5 align-items-start">
-
-        <!-- MAPA -->
-        <div class="col-lg-7">
-          <div class="mb-4"><span class="section-title">Ubicación</span></div>
-          <div class="map-placeholder">
-            <div class="map-pin">📍</div>
-            <div class="map-label">La Napolitana</div>
-            <div class="map-address">Av. Italia 1234, Providencia, Santiago</div>
-            <a href="https://maps.google.com/?q=Providencia+Santiago" target="_blank" rel="noopener"
-              style="margin-top:16px;background:var(--red);color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.9rem;">
-              <i class="bi bi-map"></i> Ver en Google Maps
-            </a>
+        <div class="col-lg-7 scroll-fade">
+          <span class="section-label">Visitanos</span>
+          <h2 class="section-title" id="ubicacion-title">Ubicación</h2>
+          <div class="map-iframe-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.0!2d-57.6362!3d-25.2867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da7e8fde7c9c3%3A0x3a4e2d3b1c7f8a2e!2sSan%20Lorenzo%2C%20Paraguay!5e0!3m2!1ses!2spy!4v1700000000000!5m2!1ses!2spy"
+              width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de La Napolitana en San Lorenzo, Asunción"></iframe>
+          </div>
+          <div class="map-info">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+            <div>
+              <strong>Av. Mariscal López 1234, San Lorenzo</strong>
+              <span>Gran Asunción, Paraguay</span>
+            </div>
           </div>
         </div>
 
-        <!-- HORARIOS -->
-        <div class="col-lg-5" id="horarios">
-          <div class="mb-4"><span class="section-title">Horarios</span></div>
-          <div class="bg-white rounded-3 p-4 shadow-sm">
-            <table class="hours-table">
+        <div class="col-lg-5 scroll-fade" id="horarios" style="animation-delay:0.15s;">
+          <span class="section-label">Horarios</span>
+          <h2 class="section-title">Abrimos</h2>
+          <div class="hours-card">
+            <table class="hours-table" aria-label="Horarios de atención">
               <tbody>
-                <tr>
-                  <td>Lunes</td>
-                  <td class="closed">Cerrado</td>
-                </tr>
-                <tr>
-                  <td>Martes</td>
-                  <td>12:00 – 22:00</td>
-                </tr>
-                <tr>
-                  <td>Miércoles</td>
-                  <td>12:00 – 22:00</td>
-                </tr>
-                <tr>
-                  <td>Jueves</td>
-                  <td>12:00 – 23:00</td>
-                </tr>
-                <tr>
-                  <td>Viernes</td>
-                  <td>12:00 – 23:30</td>
-                </tr>
-                <tr>
-                  <td>Sábado</td>
-                  <td>11:00 – 00:00</td>
-                </tr>
-                <tr>
-                  <td>Domingo</td>
-                  <td>11:00 – 22:00</td>
-                </tr>
+                <tr><td>Lunes</td><td class="closed">Cerrado</td></tr>
+                <tr><td>Martes</td><td>12:00 – 22:00</td></tr>
+                <tr><td>Miércoles</td><td>12:00 – 22:00</td></tr>
+                <tr><td>Jueves</td><td>12:00 – 23:00</td></tr>
+                <tr><td>Viernes</td><td>12:00 – 23:30</td></tr>
+                <tr><td>Sábado</td><td>11:00 – 00:00</td></tr>
+                <tr><td>Domingo</td><td>11:00 – 22:00</td></tr>
               </tbody>
             </table>
-            <div class="mt-4 p-3 rounded-2" style="background:#f0fdf4;border-left:4px solid #25D366;">
-              <small class="fw-bold" style="color:#15803d;">
-                ¡Estamos abiertos! Pedidos hasta las 22:30
-              </small>
+            <div class="open-status" id="openStatus" aria-live="polite">
+              <!-- JS will populate this -->
             </div>
             <a href="https://wa.me/595991211207?text=Hola!%20Quisiera%20hacer%20un%20pedido%20%F0%9F%8D%95"
-              class="btn-whatsapp mt-3" target="_blank" rel="noopener">
-              <i class="bi bi-whatsapp"></i> Hacer un pedido ahora
+              class="btn-whatsapp mt-3" target="_blank" rel="noopener" aria-label="Hacer un pedido ahora por WhatsApp">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i> Hacer un pedido ahora
             </a>
           </div>
         </div>
@@ -451,16 +658,172 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════ -->
+       FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="text-center mb-5 scroll-fade">
+        <span class="section-label">Resolvemos tus dudas</span>
+        <h2 class="section-title" id="faq-title">Preguntas Frecuentes</h2>
+        <p class="section-sub">Todo lo que necesitás saber antes de pedir</p>
+      </div>
+      <div class="accordion faq-accordion scroll-fade" id="faqAccordion">
+
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              ¿Cuánto tarda el delivery?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              Nuestro tiempo promedio de entrega es de <strong>30 minutos</strong>. Si superamos ese tiempo, la siguiente pizza es gratis. Los tiempos pueden variar en horario pico (viernes y sábados por la noche).
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              ¿Tienen opciones sin gluten?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              Sí, ofrecemos masa sin gluten a pedido. Consultá disponibilidad por WhatsApp al hacer tu pedido. Preparamos las pizzas con precauciones para evitar contaminación cruzada, aunque no somos un local 100% libre de gluten.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              ¿Puedo personalizar mi pizza?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              ¡Por supuesto! Podés agregar, quitar o cambiar ingredientes. Simplemente indicalo en tu mensaje de WhatsApp al hacer el pedido. Los ingredientes adicionales tienen un costo extra de ₲ 5.000 a ₲ 15.000 según el ingrediente.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+              ¿Cuál es el pedido mínimo para delivery?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              El pedido mínimo es de <strong>₲ 45.000</strong>. Los pedidos superiores a ₲ 80.000 tienen <strong>delivery gratis</strong> en toda nuestra zona de cobertura. Para pedidos menores, el costo de envío es de ₲ 8.000.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+              ¿Aceptan reservas para comer en el local?
+            </button>
+          </h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              Sí, aceptamos reservas para grupos de 4 personas o más. Podés reservar tu mesa directamente por WhatsApp con al menos 2 horas de anticipación. Para grupos grandes o eventos privados, contactanos con más tiempo.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+              ¿Qué diferencia tiene la masa madre?
+            </button>
+          </h3>
+          <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              La masa madre con <strong>24 horas de fermentación</strong> permite que la masa sea más digerible, desarrolle sabores más complejos y logre esa textura única: crujiente por fuera, suave y aireada por dentro. Es el secreto de la pizza napolitana auténtica.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
   <footer>
-    <p>🍕 <strong>La Napolitana</strong> – Pizzería Artesanal &nbsp;|&nbsp; Av. Italia 1234, Providencia &nbsp;|&nbsp;
-      0991 211 207</p>
-    <p class="mt-2" style="font-size:0.78rem;">© 2025 La Napolitana. Demo creado con ❤️ – los precios son ilustrativos.
-    </p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-text" style="font-size:1.4rem;">🍕 La <span>Napolitana</span></span>
+          <p>Pizzería Artesanal desde 1989<br>Tradición napolitana en corazón paraguayo.</p>
+          <div class="social-links" aria-label="Redes sociales">
+            <a href="https://www.instagram.com/lanapolitana.py" target="_blank" rel="noopener" aria-label="Instagram de La Napolitana" class="social-link">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/lanapolitana.py" target="_blank" rel="noopener" aria-label="Facebook de La Napolitana" class="social-link">
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/595991211207" target="_blank" rel="noopener" aria-label="WhatsApp de La Napolitana" class="social-link">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#promociones">Promociones</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Contacto</h5>
+          <ul>
+            <li><i class="bi bi-telephone-fill" aria-hidden="true"></i> 0991 211 207</li>
+            <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Av. Mariscal López 1234, San Lorenzo</li>
+            <li><i class="bi bi-envelope-fill" aria-hidden="true"></i> hola@lanapolitana.com.py</li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#" aria-label="Política de privacidad">Política de Privacidad</a></li>
+            <li><a href="#" aria-label="Términos y condiciones">Términos y Condiciones</a></li>
+            <li><a href="#" aria-label="Política de cookies">Política de Cookies</a></li>
+          </ul>
+          <p class="footer-ruc">RUC: 80012345-6</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 La Napolitana Pizzería Artesanal S.A. · RUC 80012345-6 · Todos los derechos reservados.</p>
+        <p>Los precios son ilustrativos. Demo profesional.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Bootstrap JS (CDN) -->
+  <!-- ═══════════════════════════════════════════
+       BOTÓN FLOTANTE WHATSAPP
+  ═══════════════════════════════════════════ -->
+  <a href="https://wa.me/595991211207?text=Hola!%20Quisiera%20hacer%20un%20pedido%20%F0%9F%8D%95"
+    class="fab-whatsapp" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    <span class="fab-tooltip">¡Pedí ahora!</span>
+  </a>
+
+  <!-- ═══════════════════════════════════════════
+       BOTÓN VOLVER ARRIBA
+  ═══════════════════════════════════════════ -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver al inicio de la página">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <!-- Lógica propia -->
   <script src="js/main.js"></script>
